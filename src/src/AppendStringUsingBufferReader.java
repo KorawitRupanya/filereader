@@ -25,14 +25,15 @@ public class AppendStringUsingBufferReader implements Runnable {
 			while ((i = reader.readLine()) != null) {
 				read = read + i + "\n";
 			}
+			reader.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return read;
 	}
-	
+
 	public String toString() {
-		return "Reading " + ALICE + " using BufferedReader, append lines to String. Read " + readFileToStringUsingBufferReader(ALICE).length()
-				+ " chars.";
-	} 
+		return "Reading " + ALICE + " using BufferedReader, append lines to String. Read "
+				+ readFileToStringUsingBufferReader(ALICE).length() + " chars.";
+	}
 }

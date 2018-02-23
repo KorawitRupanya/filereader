@@ -1,7 +1,7 @@
 package src;
 
 public class Stopwatch {
-	private static final double NANOSECONDS = 1.0E-9;//nano per one second
+	private static final double NANOSECONDS = 1.0E-9;// nano per one second
 	private long startTime;
 	private long stopTime;
 	private boolean running;

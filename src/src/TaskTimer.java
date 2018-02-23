@@ -8,6 +8,6 @@ public class TaskTimer {
 		sw.start();
 		runnable.run();
 		sw.stop();
-		System.out.println("in "+sw.getElapsed()+" sec.");
+		System.out.println("in " + sw.getElapsed() + " sec.");
 	}
 }

@@ -7,12 +7,12 @@ import java.io.InputStreamReader;
 public class AppendStringBuilderTask implements Runnable {
 
 	private final static String ALICE = "http://se.cpe.ku.ac.th/doc/samples/Alice-in-Wonderland.txt";
-	
+
 	@Override
 	public void run() {
 		readFileToStringBuilder(ALICE);
 	}
-	
+
 	private static String readFileToStringBuilder(String filename) {
 		InputStream in;
 		StringBuilder read = new StringBuilder();
@@ -26,14 +26,15 @@ public class AppendStringBuilderTask implements Runnable {
 					break;
 				read = read.append((char) i);
 			}
+			reader.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return read.toString();
 	}
-	
+
 	public String toString() {
-		return "Reading " + ALICE + " using FileReader,append to StringBuilder. Read " + readFileToStringBuilder(ALICE).length()
-				+ " chars.";
-	} 
+		return "Reading " + ALICE + " using FileReader,append to StringBuilder. Read "
+				+ readFileToStringBuilder(ALICE).length() + " chars.";
+	}
 }

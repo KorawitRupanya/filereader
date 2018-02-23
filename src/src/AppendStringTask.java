@@ -7,12 +7,12 @@ import java.io.InputStreamReader;
 public class AppendStringTask implements Runnable {
 
 	private final static String ALICE = "http://se.cpe.ku.ac.th/doc/samples/Alice-in-Wonderland.txt";
-	
+
 	@Override
 	public void run() {
-	 readFileToString(ALICE);
+		readFileToString(ALICE);
 	}
-	
+
 	private static String readFileToString(String filename) {
 		InputStream in;
 		String read = "";
@@ -26,14 +26,15 @@ public class AppendStringTask implements Runnable {
 					break;
 				read = read + (char) i;
 			}
+			reader.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return read;
 	}
+
 	public String toString() {
 		return "Reading " + ALICE + " using FileReader,append to String. Read " + readFileToString(ALICE).length()
 				+ " chars.";
-	} 
+	}
 }
-	
